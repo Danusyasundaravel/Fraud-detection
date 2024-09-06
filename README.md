@@ -19,8 +19,6 @@ scikit-learn: For training and saving the fraud detection model.
 
 Pandas: For handling data input and transformations.
 
-Pickle: For saving and loading the machine learning model.
-
 index.html: Provides a simple interface for entering transaction details.
 
 ## Dataset
@@ -54,4 +52,4 @@ isFlaggedFraud - The business model aims to control massive transfers from one a
 
 Acct Type - The type of account either saving or current
 
-Transaction Date
+Transaction Date- Date of transaction occured.
