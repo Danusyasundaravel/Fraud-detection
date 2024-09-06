@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection System</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Fraud Detection System</h1>
+    <form action="/predict" method="post" style="text-align: center;">
+        <!-- Input fields for transaction details -->
+        <label for="type">Transaction Type:</label>
+        <select name="type" required>
+            <option value="CASH-IN">CASH-IN</option>
+            <option value="CASH-OUT">CASH-OUT</option>
+            <option value="DEBIT">DEBIT</option>
+            <option value="PAYMENT">PAYMENT</option>
+            <option value="TRANSFER">TRANSFER</option>
+        </select><br><br>
+
+        <label for="branch">Branch:</label>
+        <input type="text" name="branch" required><br><br>
+
+        <label for="amount">Transaction Amount:</label>
+        <input type="text" name="amount" required><br><br>
+
+        <label for="oldbalanceOrg">Old Balance Origin:</label>
+        <input type="text" name="oldbalanceOrg" required><br><br>
+
+        <label for="newbalanceOrig">New Balance Origin:</label>
+        <input type="text" name="newbalanceOrig" required><br><br>
+
+        <label for="oldbalanceDest">Old Balance Destination:</label>
+        <input type="text" name="oldbalanceDest" required><br><br>
+
+        <label for="newbalanceDest">New Balance Destination:</label>
+        <input type="text" name="newbalanceDest" required><br><br>
+
+        <label for="unusuallogin">Unusual Login (1 for Yes, 0 for No):</label>
+        <input type="text" name="unusuallogin" required><br><br>
+
+        <label for="isFlaggedFraud">Flagged as Fraud (1 for Yes, 0 for No):</label>
+        <input type="text" name="isFlaggedFraud" required><br><br>
+
+        <label for="Acct type">Account Type:</label>
+        <select name="Acct type" required>
+            <option value="savings">savings</option>
+            <option value="current">current</option>
+        </select><br><br>
+
+        <label for="Time of day">Time of Day:</label>
+        <select name="Time of day" required>
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if prediction_text %}
+        <h2 style="text-align: center;">{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
